@@ -190,6 +190,8 @@
             <a href="#profile">
               <p class="profile-name">OSIS NESAS</p>
             </a>
+            <p class="text-time ">3 mins ago</p>
+            <p class="text-time ">SMKN 1 SUMEDANG</p>
           </li>
         </ul>
 
@@ -224,6 +226,11 @@
 
       <div class="card-panel container-sm mb-2">
         <ul class="icon-card">
+          <li>
+            <button type="button" class="btn btn-category">
+              Category
+            </button>
+          </li>
           <li>
             <button href="#emot" onclick="react()" >
               <img id="emot" src="Assets/Icons/emoticon-outline.png" alt="" />

@@ -157,6 +157,11 @@ body {
   margin: 0.5em 0;
   display: flex;
   justify-content: space-between;
+  align-items: center
+}
+
+.text-time {
+  font-size: 0.4rem;
 }
 
 .top-card-left {
@@ -200,6 +205,21 @@ body {
 
 .card-panel .icon-card li {
   margin-left: 0.5em;
+}
+
+.card-post .btn-category {
+  border: 1px solid var(--white);
+  border-radius: 0.5rem;
+  color: var(--white);
+  transition: 1s ease-in;
+  font-weight: 700;
+}
+
+.card-post .btn-category:hover {
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+  border-radius: 0.5rem;
+  color: var(--primary);
 }
 
 #more {
