@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v8.6.4',
-        'version' => '8.6.4.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '73a1a5ae0c287a8d600ab39f916988bfca75c27f',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -128,7 +128,7 @@
             'install_path' => __DIR__ . '/../fakerphp/faker',
             'aliases' => array(),
             'reference' => '271d384d216e5e5c468a6b28feedf95d49f83b35',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'filp/whoops' => array(
             'pretty_version' => '2.14.4',
@@ -395,12 +395,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v8.6.4',
-            'version' => '8.6.4.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '73a1a5ae0c287a8d600ab39f916988bfca75c27f',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -769,8 +769,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(

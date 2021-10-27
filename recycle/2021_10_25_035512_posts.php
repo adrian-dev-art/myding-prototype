@@ -14,14 +14,15 @@ class Posts extends Migration
     public function up()
     {
         Schema::create('post', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->unique();
-            $table->foreignId('category_id')->unique();
+            $table->id('id');
+            $table->integer('user_id');
+            $table->integer('category_id');
             $table->string('image');
-            $table->string('place')->nullable();
+            $table->string('place');
             $table->string('caption');
-            $table->foreignId('comment_id');
+            $table->integer('comment_id');
             $table->integer('like');
+            $table->timestamps('created_at');
             $table->timestamps();
         });
     }
