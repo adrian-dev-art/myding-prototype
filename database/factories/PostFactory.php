@@ -27,6 +27,7 @@ class PostFactory extends Factory
             'category_id' => 1,
             'place' => $this->faker->city(5),
             'image' => 'img-post.png',
+            'title' => "This Is Title",
             'description' => 
             'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ',
             'comment_id' => 1,

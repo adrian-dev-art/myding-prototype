@@ -19,9 +19,11 @@ class CreatePostsTable extends Migration
             $table->foreignId('category_id');
             $table->string('place');
             $table->string('image');
+            $table->text('title');
             $table->text('description');
             $table->foreignId('comment_id');
             $table->Integer('like');
+            // $table->timestamp('created_at');
             $table->timestamps();
         });
     }
