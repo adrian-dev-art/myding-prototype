@@ -15,8 +15,8 @@
   
       function react() {
         var x = document.getElementById("emot")
-        var smile = "Assets/Icons/emoticon-white.png"
-        var sad = "Assets/Icons/emoticon-confused-white.png"
+        var smile = "/Assets/Icons/emoticon-white.png"
+        var sad = "/Assets/Icons/emoticon-confused-white.png"
   
         if (x.src = smile) {
           x.src = sad

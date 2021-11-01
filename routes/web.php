@@ -16,7 +16,7 @@ use App\Http\Controllers\PostController;
 */
 
 // Route::get('/', function () {
-//     return view('user.index');
+//     return view('user.show');
 // });
     
 Route::get('/', [PostController::class, 'index']);

@@ -23,6 +23,7 @@ li {
     list-style-type: none;
 }
 
+
 .d-flex {
     display: flex !important;
     flex-direction: column;
@@ -52,17 +53,32 @@ body {
 
 /* topbar */
 .topbar {
+    
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    height: 6vh;
+    height: 7vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
     flex-direction: row;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     width: 100vw;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.534);
+    border-radius:  0px 20px ;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+.app a{
+    font-weight: 600;
+}
+
+.app a:hover {
+    color: var(--white)
 }
 
 .left-bar {
@@ -164,12 +180,13 @@ body {
     display: flex;
     width: 100%;
     align-items: flex-start;
+    flex-direction: column;
 }
 
 .card-post .description-card p {
     font-size: 0.8em;
     font-weight: 500;
-    margin-left: 1em;
+    /* margin-left: 1em; */
 }
 
 .card-post .description-card a {
@@ -178,7 +195,6 @@ body {
 
 .card-post .description-post {
     font-size: 0.8em;
-    display: none;
 }
 
 .card-panel .icon-card {
@@ -206,6 +222,22 @@ body {
     border: 1px solid var(--primary);
     border-radius: 0.5rem;
     color: var(--primary);
+}
+
+.categories::-webkit-scrollbar{
+    width: 0;
+}
+
+.categories {
+    /* position: sticky; */
+    margin-top: 1rem;
+    margin-bottom: -1.5rem;
+    display: flex;
+    overflow-x: auto;
+}
+
+.btn-categoires {
+    margin-right: 0.5rem;
 }
 
 #more {

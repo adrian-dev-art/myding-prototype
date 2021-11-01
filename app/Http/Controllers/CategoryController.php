@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Post;
-use App\Models\Category;
+use App\Model\Category;
 
-
-class PostController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,10 +16,6 @@ class PostController extends Controller
     public function index()
     {
         
-        return view('user.index', [
-            'posts' => Post::all(),
-            'categories' => Category::all()
-        ]);
     }
 
     /**
@@ -54,9 +47,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return view('user.show', [
-            'post' => Post::findorFail($id)
-        ]);
+        //
     }
 
     /**
