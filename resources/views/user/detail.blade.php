@@ -1,6 +1,8 @@
 @extends('layout.main')
 @section('content')
 
+<h1>kamu di detail</h1>
+
     @foreach ($posts as $post)
     <div id="card" class="container d-flex justify-content-center align-items-center">
       

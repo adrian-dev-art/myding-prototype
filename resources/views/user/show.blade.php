@@ -1,7 +1,6 @@
 @extends('layout.main')
 @section('content')
 
-    @foreach ($posts as $post)
     <div id="card" class="container d-flex justify-content-center align-items-center">
       
       <!-- card-content -->
@@ -35,7 +34,7 @@
         
         <!-- Bagian gambar di card -->
         <div class="image-card">
-          <img src="Assets/Images/img-post.png" alt="" />
+          <img src="Assets/Images/{{$post->image}}" alt="" />
         </div>
         
         <!-- Bagian Content kaya deskripsi -->
@@ -43,7 +42,10 @@
           {{-- <a href="#profile">
             <img class="profile-pic" src="Assets/Images/profile-pic-me.png" alt="" />
           </a> --}}
-          <h6 class="title m-1"><?= $post->title; ?></h6>
+          <h6 class="title m-1">{{$post->title}}</h6>
+          <p class="description-post">
+              {{ $post->description}}
+          </p>
           </div>
           
           <div class="card-panel container-sm mb-2">
@@ -80,56 +82,8 @@
     </section>
     
   </div>
-  @endforeach
+ 
   
-  <!-- Optional JavaScript; choose one of the two! -->
-  
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-  crossorigin="anonymous"></script>
-  
-  
-  <script>
 
-
-    // function myFunction() {
-    //   var desc = document.getElementById("desc-post");
-    //   var btnText = document.getElementById("myBtn");
-
-    //   if (desc.style.display === "none") {
-    //     desc.style.display = "inline";
-    //     btnText.innerHTML = "less";
-    //   } else {
-    //     btnText.innerHTML = "more";
-    //     desc.style.display = "none";
-    //   }
-    // }
-
-    function showNavigation() {
-      var nav = document.getElementById("nav")
-      if (nav.style.display === "none") {
-        nav.style.bottom = "1vh"
-        nav.style.display = "block"
-      } else {
-        nav.style.display = "-5vh"
-        nav.style.display = "none"
-      }
-    }
-
-
-
-    function react() {
-      var x = document.getElementById("emot")
-      var smile = "Assets/Icons/emoticon-white.png"
-      var sad = "Assets/Icons/emoticon-confused-white.png"
-
-      if (x.src = smile) {
-        x.src = sad
-      } else {
-        x.src = smile
-      }
-    }
-  </script>
 
 @endsection()

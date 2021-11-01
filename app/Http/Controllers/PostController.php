@@ -51,7 +51,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('user.show', [
+            'post' => Post::findOrFail($id)
+        ]);
     }
 
     /**

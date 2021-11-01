@@ -65,7 +65,7 @@ body {
     width: 100vw;
 }
 
-.topbar .left-bar {
+.left-bar {
     display: flex;
     width: 20vw;
     justify-content: space-evenly;
@@ -108,30 +108,6 @@ body {
 }
 
 .nav-panel ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: space-around;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.react {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.react-panel {
-    width: 60vw;
-    background-color: var(--white);
-    border-radius: 15px;
-    position: fixed;
-    bottom: 3vh;
-    animation: showNav 0.5s cubic-bezier(0.57, 0.01, 0, 1.38);
-}
-
-.react-panel ul {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -221,7 +197,7 @@ body {
     border: 1px solid var(--white);
     border-radius: 0.5rem;
     color: var(--white);
-    transition: 1s ease-in;
+    transition: 0.5s ease-in;
     font-weight: 700;
 }
 
