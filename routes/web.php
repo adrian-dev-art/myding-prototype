@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+
+use App\Models\Category;
 
 
 /*
@@ -20,4 +23,14 @@ use App\Http\Controllers\PostController;
 // });
     
 Route::get('/', [PostController::class, 'index']);
+
 Route::get('/post/{id}', [PostController::class, 'show']);
+
+Route::get('/categories/{category:name}',  [PostController::class, 'showByCategories']);
+
+// Route::get('/categories/{category:name}', function(Category $category){
+//     return view('user.index',[
+//         'post' => $category->posts,
+//         'category' => $category->name,
+//     ]);
+// });

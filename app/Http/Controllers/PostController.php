@@ -20,9 +20,23 @@ class PostController extends Controller
     {
         
         return view('user.index', [
-            'posts' => Post::all(),
-            'categories' => Category::all()
+            'posts' => Post::latest()->get(),
+            'categories' => Category::get(),
+            'activeBtn' => "active-btn-categories",
         ]);
+        
+    }
+    
+    public function showByCategories(Category $category)
+    {
+        
+        return view('user.index', [
+            'categories' => Category::get(),
+            'posts' => $category->posts,
+            'category' => $category->name,
+            'activeBtn' => "active-btn-categories",
+        ]);
+     
     }
 
     /**

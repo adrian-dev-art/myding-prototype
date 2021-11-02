@@ -23,15 +23,15 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => 1,
-            'category_id' => 1,
+            'user_id' => $this->faker->randomDigitNotNull(),
+            'category_id' => $this->faker->randomDigitNotNull(),
             'place' => $this->faker->city(5),
             'image' => 'img-post.png',
-            'title' => "This Is Title",
-            'description' => 
-            'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ',
-            'comment_id' => 1,
-            'like' => 200,
+            'slug' =>  $this->faker->word(),
+            'title' =>  $this->faker->sentence(),
+            'description' => $this->faker->paragraphs(2, true),
+            'comment_id' => $this->faker->randomDigitNotNull(),
+            'like' =>  $this->faker->randomDigitNotNull(),
         ];
     }
 }

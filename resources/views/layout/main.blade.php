@@ -45,13 +45,13 @@
         
         <div class="nav-panel" id="nav">
           <ul>
-            <li><a href="#world">
+            <li><a href="/">
               <img src="/Assets/Icons/earth.png" alt="">
             </a></li>
             <li><a href="#search">
               <img src="/Assets/Icons/magnify.png" alt="">
             </a></li>
-            <li><a href="#world">
+            <li><a href="/">
               <img src="/Assets/Icons/fire-circle.png" alt="">
             </a></li>
             <li><a href="#world">
