@@ -5,11 +5,20 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '73a1a5ae0c287a8d600ab39f916988bfca75c27f',
+        'reference' => 'd8fa656001331a1e556b1474a2a987d660eb4f58',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'aeon-php/calendar' => array(
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../aeon-php/calendar',
+            'aliases' => array(),
+            'reference' => '5899c465ac30e8bf9d7dd324d1d711bccef694f1',
+            'dev_requirement' => false,
+        ),
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.0.3',
             'version' => '2.0.3.0',
@@ -26,6 +35,15 @@
             'install_path' => __DIR__ . '/../brick/math',
             'aliases' => array(),
             'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
+            'dev_requirement' => false,
+        ),
+        'coduo/php-humanizer' => array(
+            'pretty_version' => '4.0.2',
+            'version' => '4.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../coduo/php-humanizer',
+            'aliases' => array(),
+            'reference' => 'd941401805af0daca3ae3b449f4e39f65e4e1142',
             'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(
@@ -385,6 +403,15 @@
                 0 => '*',
             ),
         ),
+        'laravel/breeze' => array(
+            'pretty_version' => 'v1.4.3',
+            'version' => '1.4.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/breeze',
+            'aliases' => array(),
+            'reference' => 'bb97d9a56fe74d9bd0de3ea6ac162ea033637adb',
+            'dev_requirement' => true,
+        ),
         'laravel/framework' => array(
             'pretty_version' => 'v8.67.0',
             'version' => '8.67.0.0',
@@ -400,7 +427,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '73a1a5ae0c287a8d600ab39f916988bfca75c27f',
+            'reference' => 'd8fa656001331a1e556b1474a2a987d660eb4f58',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -1245,6 +1272,15 @@
             'install_path' => __DIR__ . '/../symfony/var-dumper',
             'aliases' => array(),
             'reference' => 'eaaea4098be1c90c8285543e1356a09c8aa5c8da',
+            'dev_requirement' => false,
+        ),
+        'symfony/yaml' => array(
+            'pretty_version' => 'v5.3.6',
+            'version' => '5.3.6.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/yaml',
+            'aliases' => array(),
+            'reference' => '4500fe63dc9c6ffc32d3b1cb0448c329f9c814b7',
             'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(

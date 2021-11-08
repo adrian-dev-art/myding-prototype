@@ -32,7 +32,8 @@ li {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
     padding: 0;
     margin: 0;
 }
@@ -93,7 +94,7 @@ body {
 }
 
 #nav-btn {
-    background-color: var(--secondary);
+    background-color: var(--white);
     position: fixed;
     width: 3vw;
     height: 15vh;
@@ -374,4 +375,112 @@ body {
 
 .share-panel .icon-person-panel li {
     margin: 0 0.2em;
+}
+
+/*profile*/
+
+.wrapper-profile {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat( 2,1fr );
+    margin-top: 2vh;
+    
+}
+
+.right-col {
+    display: grid;
+}
+
+.name-username h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.name-username p {
+    font-size: 1rem;
+}
+
+.call-to-action {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.wrapper {
+    margin-top: 20vh;
+    background-color: var(--secondary);
+    height: 80vh;
+    border-top-left-radius: 40px;
+    display: flex;
+}
+
+.wrapper-img-btn-follow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.profile-img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+ .profile-img img{
+    border-radius: 20px;
+}
+
+.dm-btn {
+    width: max-content;
+    height: max-content;
+    padding: 0.5rem;
+    background-color: var(--primary);
+    border-radius: 5px;
+    box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25);
+    
+}
+
+.dm-btn img {
+    height: 2rem;
+}
+
+.follow-btn {
+    width: max-content;
+    height: max-content;
+    padding: 0.1rem 7vw;
+    margin-left: 10px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25);
+}
+
+.follow-btn p{
+    color: var(--secondary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    
+}
+
+.status-count {
+    box-shadow: 8px 6px 11px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 90vw;
+    height: 5em;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2vh auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.count-followers, .count-following, .count-posts {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.status-count .title {
+    font-size: 1.2rem;
+    font-weight: 700;
 }
