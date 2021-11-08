@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('username');
             $table->string('profile_picture');
             $table->string('school')->nullable();
             $table->string('organization')->nullable();
@@ -24,6 +25,10 @@ class CreateUsersTable extends Migration
             $table->string('phone_number')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->foreignId('role_id');
+            $table->integer('following_count');
+            $table->integer('followers_count');
+            $table->integer('post_count');
             $table->rememberToken();
             $table->timestamps();
         });

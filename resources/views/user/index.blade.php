@@ -1,5 +1,9 @@
-@extends('layout.main')
+@extends('layouts.main')
+@section('topbar')
+@extends('components.top-bar-main')
+@endsection()
 @section('content')
+
 
 
 <section class="categories container">
@@ -20,12 +24,12 @@
       <!-- Bagian Kiri Card -->
       <ul class="top-card-left ">
         <li>
-          <a href="#profile">
+          <a href="/profile/{{$post->user->id}}">
             <img class="profile-pic" src="/Assets/Images/profile-pic-me.png" alt="" />
           </a>
         </li>
         <li class="mx-2">
-          <a href="#profile">
+          <a href="/profile/{{$post->user->id}}">
             <p class="profile-name">
               {{ $post->user->name}}
             </p>

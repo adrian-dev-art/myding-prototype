@@ -1,4 +1,8 @@
-@extends('layout.main')
+@extends('layouts.main')
+
+@section('top-bar')
+  @extends('components.top-bar-main')
+@endsection()
 
 @section('content')
 
