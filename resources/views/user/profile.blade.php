@@ -13,10 +13,10 @@
                 <p>{{$user->username}}</p>
             </div>
             <div class="call-to-action">
-                <div class="dm-btn">
+                <a class="dm-btn btn">
                     <img src="/Assets/Icons/message-text-outline.png" alt="">
-                </div>
-                <div class="follow-btn">
+                </a>
+                <div class="follow-btn btn">
                     <p>Follow</p>
                 </div>
             </div>
@@ -51,33 +51,22 @@
             </div>
         </div>
         <h2 class="title-wrapper-post">POST</h2>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="/Assets/Images/img-post1.png" alt="Avatar" width="200px">
-              </div>
-              <div class="flip-card-back">
-                <h1>John Doe</h1> 
-                <p>Architect & Engineer</p> 
-                <p>We love that guy</p>
-              </div>
-            </div>
-          </div>
-        {{-- <div class="wrapper-post">
+        <div class="wrapper-post">
             <div class="wrapper-card-post mx-5">
-                
+                @foreach ($posts as $post)
                 <div class="card-post-me ">
                     <div class="front-card">
-                        <img src="/Assets/Images/img-post1.png" alt="" height="200px">
+                        <a href="/post/{{$post->user->username}}">
+                        <img src="/Assets/Images/img-post1.png" alt="" height="230px">
+                    </a>
                     </div>
                     <div class="back-card">
-
                     </div>
                 </div>
+                @endforeach
+               
             </div>
-        </div> --}}
-
-        
+        </div>
     </div>
 </div>
 

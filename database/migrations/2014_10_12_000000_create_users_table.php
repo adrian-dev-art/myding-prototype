@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->integer('following_count');
             $table->integer('followers_count');
             $table->integer('post_count');
+            $table->foreignId('post_id');
             $table->rememberToken();
             $table->timestamps();
         });

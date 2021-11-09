@@ -28,4 +28,8 @@ class CreateTablePosts extends Migration
     {
         Schema::dropIfExists('table_posts');
     }
+
+    public function User(){
+        return $this->BelongsTo(User::class);
+    }
 }
