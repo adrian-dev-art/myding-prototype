@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-
     
     <div class="wrapper-profile container">
         <div class="left-col profile-img">

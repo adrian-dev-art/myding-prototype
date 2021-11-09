@@ -29,7 +29,10 @@ class CreateUsersTable extends Migration
             $table->integer('following_count');
             $table->integer('followers_count');
             $table->integer('post_count');
+<<<<<<< HEAD
             $table->foreignId('post_id');
+=======
+>>>>>>> eefa120af64827e8f6961c22b4f3a1f666d6a2cb
             $table->rememberToken();
             $table->timestamps();
         });
