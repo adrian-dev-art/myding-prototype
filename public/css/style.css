@@ -409,9 +409,10 @@ body {
 .wrapper {
     margin-top: 20vh;
     background-color: var(--secondary);
-    height: 80vh;
+    height: 100%;
     border-top-left-radius: 40px;
     display: flex;
+    flex-direction: column;
 }
 
 .wrapper-img-btn-follow {
@@ -435,7 +436,6 @@ body {
     width: max-content;
     height: max-content;
     padding: 0.5rem;
-<<<<<<< HEAD
     border: 2px solid var(--white);
     border-radius: 5px;
     box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25); 
@@ -444,12 +444,6 @@ body {
 .dm-btn:hover {
     border: 2px solid var(--secondary);
     background-color: var(--secondary);
-=======
-    background-color: var(--primary);
-    border-radius: 5px;
-    box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25);
-    
->>>>>>> eefa120af64827e8f6961c22b4f3a1f666d6a2cb
 }
 
 .dm-btn img {
@@ -461,17 +455,12 @@ body {
     height: max-content;
     padding: 0.1rem 7vw;
     margin-left: 10px;
-<<<<<<< HEAD
     /* background-color: var(--white); */
     border: 2px solid var(--white);
-=======
-    background-color: var(--white);
->>>>>>> eefa120af64827e8f6961c22b4f3a1f666d6a2cb
     border-radius: 5px;
     box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25);
 }
 
-<<<<<<< HEAD
 .follow-btn:hover {
     background-color: var(--white);
 }
@@ -484,26 +473,14 @@ body {
     color: var(--white);
     font-size: 1.8rem;
     font-weight: 700;
-=======
-.follow-btn p{
-    color: var(--secondary);
-    font-size: 1.8rem;
-    font-weight: 700;
-    
->>>>>>> eefa120af64827e8f6961c22b4f3a1f666d6a2cb
 }
 
 .status-count {
     box-shadow: 8px 6px 11px 3px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-<<<<<<< HEAD
     width: 85vw;
     padding: 20px;
     height: 7em;
-=======
-    width: 90vw;
-    height: 5em;
->>>>>>> eefa120af64827e8f6961c22b4f3a1f666d6a2cb
     background-color: var(--primary);
     display: flex;
     justify-content: space-around;
@@ -514,7 +491,6 @@ body {
 }
 
 .count-followers, .count-following, .count-posts {
-<<<<<<< HEAD
     font-size: 1.2rem;
     font-weight: 700;
     text-align: center;
@@ -542,12 +518,16 @@ body {
 
 .wrapper-card-post {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     align-content: space-around;
     justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
 
+}
+
+.front-card img{
+    height: 45vw;
 }
 
 .card-post-me{
@@ -572,13 +552,3 @@ body {
 
 }
 
-=======
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.status-count .title {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
->>>>>>> eefa120af64827e8f6961c22b4f3a1f666d6a2cb

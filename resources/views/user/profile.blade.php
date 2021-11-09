@@ -56,7 +56,7 @@
                 <div class="card-post-me ">
                     <div class="front-card">
                         <a href="/post/{{$post->user->username}}">
-                        <img src="/Assets/Images/img-post1.png" alt="" height="230px">
+                        <img src="/Assets/Images/img-post1.png" alt="" >
                     </a>
                     </div>
                     <div class="back-card">
