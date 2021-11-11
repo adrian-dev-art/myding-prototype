@@ -12,9 +12,14 @@
             </a>
           </li>
           <li>
-          <a href="/profile/{{$post->user->id}}">
+          <a href="/profile/{{auth()->user()->id}}">
               <img class="profile-pic" src="/Assets/Images/profile-pic-me.png" alt="" />
             </a>
           </li>
+          <li>
+          {{-- <a href="{{Auth::logout()}}">
+              <img class="profile-pic" src="/Assets/Images/profile-pic-me.png" alt="" />
+            </a>
+          </li> --}}
         </ul>
       </section>

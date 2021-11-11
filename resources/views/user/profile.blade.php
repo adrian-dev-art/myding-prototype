@@ -34,7 +34,7 @@
             </div>
             <div class="following">
                 <p class="count-following">
-                {{$user->following_count}}
+                {{number_format($user->following_count)}}
                 </p>
                 <p class="title">
                     Following
@@ -42,7 +42,7 @@
             </div>
             <div class="posts">
                 <p class="count-posts">
-                {{$user->post_count}}
+                {{number_format($user->post_count)}}
                 </p>
                 <p class="title">
                     Post

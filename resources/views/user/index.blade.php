@@ -5,7 +5,6 @@
 @section('content')
 
 
-
 <section class="categories container">
   <a href="/" type="button" class=" btn-sm btn-categories ">All</a>
   @foreach ($categories as $category)
@@ -14,6 +13,7 @@
   </a>
   @endforeach
 </section>
+
 
 @foreach ($posts as $post)
 <div id="card" class="container d-flex justify-content-center align-items-center">

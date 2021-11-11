@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Auth;
 use App\Http\Controllers\UserController;
 
 /*
@@ -15,11 +16,13 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [PostController::class, 'index']);
-Route::get('/post/{id}', [PostController::class, 'show']);
-Route::get('/categories/{category:name}',  [PostController::class, 'showByCategories']);
 
-Route::get('/profile/{id}', [UserController::class, 'show']);
+
+
+    Route::get('/', [PostController::class, 'index'])->middleware(['auth']);
+    Route::get('/post/{id}', [PostController::class, 'show']);
+    Route::get('/categories/{category:name}', [PostController::class, 'showByCategories']);
+    Route::get('/profile/{id}', [UserController::class, 'show']);
 
 
 // Route::get('/dashboard', function () {

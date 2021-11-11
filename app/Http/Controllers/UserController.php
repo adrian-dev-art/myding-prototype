@@ -53,7 +53,7 @@ class UserController extends Controller
     {
         return view('user.profile', [
             'user' => User::findorFail($id),
-            'posts' => Post::get(),
+            'posts' => Post::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
