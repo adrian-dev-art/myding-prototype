@@ -59,7 +59,7 @@
             <ul class="icon-card">
               <li>
                 <a type="button" class="btn btn-category">
-                  {{ $post->category->category_name }}
+                  {{ $post->category->name }}
                 </a>
               </li>
               <li>

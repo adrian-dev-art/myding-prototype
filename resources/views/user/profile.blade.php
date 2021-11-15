@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-    
     <div class="wrapper-profile container">
         <div class="left-col profile-img">
             <img src="/Assets/Images/adrian.png" alt="">
@@ -55,7 +54,7 @@
                 @foreach ($posts as $post)
                 <div class="card-post-me ">
                     <div class="front-card">
-                        <a href="/post/{{$post->user->username}}">
+                        <a href="/post/{{$post->id}}">
                         <img src="/Assets/Images/img-post1.png" alt="" >
                     </a>
                     </div>

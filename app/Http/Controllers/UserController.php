@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -19,6 +20,12 @@ class UserController extends Controller
      */
     public function index()
     {
+
+        return view('user.index', [
+            'id' => Auth::id(),
+        ]);
+
+        // Retrieve the currently authenticated user...
         
     }
 
@@ -53,7 +60,7 @@ class UserController extends Controller
     {
         return view('user.profile', [
             'user' => User::findorFail($id),
-            'posts' => Post::where('user_id', auth()->user()->id)->get(),
+            'posts' => DB::table('posts')->where('user_id', $id)->get(),
         ]);
     }
 

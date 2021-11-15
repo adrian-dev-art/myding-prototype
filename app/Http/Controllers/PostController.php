@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\User;
 
 
 class PostController extends Controller
@@ -20,9 +21,9 @@ class PostController extends Controller
     {
         
         return view('user.index', [
+            'user' => User::get(),
             'posts' => Post::latest()->get(),
             'categories' => Category::get(),
-            'activeBtn' => "active-btn-categories",
         ]);
         
     }

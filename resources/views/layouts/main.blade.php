@@ -15,12 +15,8 @@
 </head>
 <body>
 
-
-
     @yield('topbar')
 
-      
-      
       <section class="navigation ">
         <button type="button" id="nav-btn" onClick="showNavigation()" onchange="closeNavigation()"></button>
         
@@ -38,7 +34,7 @@
             <li><a href="#world">
               <img src="/Assets/Icons/bell-outline.png" alt="">
             </a></li>
-            <!-- <li><a href="/}}"> -->
+            <li><a href=" /profile/ ">
               <img src="/Assets/Icons/account-circle-outline.png" alt="">
             </a></li>
           </ul>

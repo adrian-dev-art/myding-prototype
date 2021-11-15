@@ -18,15 +18,9 @@ use App\Http\Controllers\UserController;
 
 
 
-
     Route::get('/', [PostController::class, 'index'])->middleware(['auth']);
     Route::get('/post/{id}', [PostController::class, 'show']);
     Route::get('/categories/{category:name}', [PostController::class, 'showByCategories']);
     Route::get('/profile/{id}', [UserController::class, 'show']);
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
