@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
+
+    <div class="create-post">
+        
+    </div>
+
     <div class="wrapper-profile container">
         <div class="left-col profile-img">
             <img src="/Assets/Images/adrian.png" alt="">
@@ -50,9 +55,14 @@
         </div>
         <h2 class="title-wrapper-post">POST</h2>
         <div class="wrapper-post">
+            @if (session()->has('succes'))
+                <div class="alert alert-succes" role="alert">
+                    {{ session('succes')}}
+                </div>
+            @endif
             <div class="wrapper-card-post mx-5">
                 @foreach ($posts as $post)
-                <div class="card-post-me ">
+                <div class="card-post-me mx-2">
                     <div class="front-card">
                         <a href="/post/{{$post->id}}">
                         <img src="/Assets/Images/img-post1.png" alt="" >

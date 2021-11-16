@@ -18,9 +18,14 @@ use App\Http\Controllers\UserController;
 
 
 
-    Route::get('/', [PostController::class, 'index'])->middleware(['auth']);
-    Route::get('/post/{id}', [PostController::class, 'show']);
+    Route::get('/', [PostController::class, 'index'])->middleware('auth');
+
+    Route::resource('post', PostController::class)->middleware('auth');
+    Route::get('/post/checkSlug/', [PostController::class, 'checkSlug'])->middleware('auth');
+
     Route::get('/categories/{category:name}', [PostController::class, 'showByCategories']);
-    Route::get('/profile/{id}', [UserController::class, 'show']);
+    Route::get('/profile/{user:username}', [UserController::class, 'show'])->name('profile');
+    
+   
 
 require __DIR__.'/auth.php';

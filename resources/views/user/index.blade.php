@@ -41,15 +41,17 @@
 
       <!-- Bagian Kanan Card -->
       <div class="right-card-post">
-        <a href="">
+        {{-- <a href="">
           <img src="/Assets/Icons/more-btn.png" alt="" />
-        </a>
+        </a> --}}
       </div>
     </div>
 
     <!-- Bagian gambar di card -->
     <div class="image-card">
-      <img src="/Assets/Images/img-post.png" alt="" />
+      <a href="/post/{{$post->id}}">
+        <img src="/Assets/Images/{{$post->image}}" alt="" />
+      </a>
     </div>
 
     <!-- Bagian Content kaya deskripsi -->

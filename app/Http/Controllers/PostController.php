@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
-
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostController extends Controller
 {
@@ -47,7 +48,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.post-form',[
+            'categories' => Category::get(),
+        ]);
     }
 
     /**
@@ -58,7 +61,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $validatedData = $request->validate([
+            'title' => 'required|max:225',
+            'slug' => 'required|unique:posts',
+            'category_id' => 'required',
+            'description' => 'required',
+            'place' => 'required',
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Post::create($validatedData);
+
+        
+        return redirect()->route('profile', [Auth::id()])
+        ->with('succes', 'Your post has been added');
+
     }
 
     /**
@@ -106,5 +125,10 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function checkSlug(Request $request){
+        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

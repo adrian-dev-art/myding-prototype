@@ -16,8 +16,8 @@
           <!-- Bagian Kiri Card -->
           <ul class="top-card-left ">
             <li >
-              <a href="#profile" >
-                <img class="profile-pic" src="/Assets/Images/profile-pic-me.png" alt="" />
+              <a href="/profile/{{$post->user->id}}" >
+                <img class="profile-pic" src="/Assets/Images/{{$post->user->profile_picture}}" alt="" />
               </a>
             </li>
             <li class="mx-2">
@@ -51,7 +51,7 @@
           </a> --}}
           <h6 class="title ">{{$post->title}}</h6>
           <p class="description-post">
-              {{ $post->description}}
+            {!! $post->description !!}
           </p>
           </div>
           

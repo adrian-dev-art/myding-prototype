@@ -19,7 +19,7 @@
             
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li><a class="dropdown-item" href="/profile/{{ Auth::id() }}">My Profile</a></li>
-                <li><a class="dropdown-item" href="{{Auth::logout()}}">Logout</a></li>
+                <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
               </ul>
             </div>
           </li>
