@@ -45,7 +45,11 @@
         
         <!-- Bagian gambar di card -->
         <div class="image-card">
-          <img src="/Assets/Images/{{$post->image}}" alt="" />
+        @if($post->image)
+             <img src="{{asset('storage/'.$post->image)}}" alt="">
+        @else
+            <img src="/Assets/Images/img-post1.png" alt="">
+        @endif
         </div>
         
         <!-- Bagian Content kaya deskripsi -->

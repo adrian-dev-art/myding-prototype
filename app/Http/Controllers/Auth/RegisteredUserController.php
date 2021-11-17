@@ -34,13 +34,14 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255','unique:users'],
             'school' => ['required', 'string', 'max:255','nullable'],
             'organization' => ['required', 'string', 'max:255','nullable'],
             'company' => ['required', 'string', 'max:255','nullable'],
             'phone_number' => ['required', 'digits:13'],
+            'profile_picture' => ['image', 'file'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -49,12 +50,17 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'username' => $request->username,
             'school' => $request->school,
+            'profile_picture' => $request->profile_picture,
             'company' => $request->company,
             'organization' => $request->organization,
             'phone_number' => $request->phone_number,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        if ($request->file('profile_picture')) {
+            $validatedData['profile_picture'] = $request->file('profile_picture')->store('profile-picture');
+        }
 
         event(new Registered($user));
 

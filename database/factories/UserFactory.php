@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'followers_count' => $this->faker->randomNumber(),
             'post_count' => $this->faker->randomNumber(),
             'username' => $this->faker->firstName(),
-            'profile_picture' => 'profile-pic-me.png',
+            // 'profile_picture' => 'profile-pic-me.png',
             'school' => 'SMKN 1 SUMEDANG',
             'organization' => 'VENCE',
             'company' => $this->faker->company(),

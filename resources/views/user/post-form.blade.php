@@ -6,7 +6,7 @@
     <div class="content-add-edit-post mt-3 ">
         <h2 class="d-flex align-items-center mb-3">Add Post</h2>
 
-        <form action="/post" method="POST">
+        <form action="/post" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3 group-input">
               <label for="title" class="form-label">Title</label>
@@ -37,13 +37,13 @@
                   </div>
               @enderror
             </div>
-
+            
             <div class="mb-3 group-input">
               <label for="description" class="form-label">Description</label>
               <input id="x" type="hidden" name="description" value="{{old('description')}}">
               <trix-editor input="x"></trix-editor>
               @error('description')
-                  <p class="text-danger">{{$message}}</p>
+              <p class="text-danger">{{$message}}</p>
               @enderror
             </div>
 
@@ -60,14 +60,23 @@
                 @endforeach
               </select>
             </div>
-
+            
+            <div class="mb-3">
+              <label for="image" class="form-label">Post Image</label>
+              <input class="form-control  @error('image') is-invalid @enderror" type="file" id="image" name="image">
+              @error('image')
+                  <div class="invalid-feedback">
+                    {{ $message}}
+                  </div>
+              @enderror
+            </div>
 
             
          
             <button type="submit" class="btn btn-primary">Post now</button>
           </form>
     </div>
-</div>
+  </div>
 
 <script>
    const title = document.querySelector('#title');

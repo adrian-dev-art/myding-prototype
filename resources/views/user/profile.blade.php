@@ -18,11 +18,11 @@
 
     <div class="wrapper-profile container">
         <div class="left-col profile-img">
-            @if ($user->profile_picture)
-                <img src="/Assets/Images/{{ $user->profile_picture }}" alt="" height="150">
-            @else
-                <img src="/Assets/Images/avatar.png" alt="" height="150">    
-            @endif
+            @if($user->profile_picture)
+                <img src="{{asset('storage/'.$user->profile_picture)}}" alt="" height="40" width="40" class="rounded-circle profile-pic">
+                @else
+                    <img src="/Assets/Images/avatar.png" alt="" height="40" width="40" class="rounded-circle">    
+                @endif
         </div>
         <div class="right-col">
             <div class="name-username">
@@ -79,7 +79,11 @@
                     <div class="card-post-me mx-2">
                         <div class="front-card">
                             <a href="/post/{{ $post->id }}">
-                                <img src="/Assets/Images/img-post1.png" alt="">
+                                @if($post->image)
+                                    <img src="{{asset('storage/'.$post->image)}}" alt="">
+                                @else
+                                    <img src="/Assets/Images/img-post1.png" alt="">
+                                @endif
                             </a>
                         </div>
                         <div class="back-card">

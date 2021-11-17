@@ -38,10 +38,11 @@
         <li>
           <a href="/profile/{{$post->user->id}}">
             @if ($post->user->profile_picture)
-                <img src="/Assets/Images/{{ $post->user->profile_picture }}" alt="" height="40" width="40" class="rounded-circle">
+                <img src="{{asset('storage/'.$post->profile_picture)}}" alt="" height="40" width="40" class="rounded-circle profile-pic">
             @else
-                <img src="/Assets/Images/avatar.png" alt="" height="40" width="40" class="rounded-circle">    
+                <img src="/Assets/Images/avatar.png" alt="" height="40" width="40" class="rounded-circle profile-pic">    
             @endif
+            
           </a>
         </li>
         <li class="mx-2">
@@ -66,7 +67,11 @@
     <!-- Bagian gambar di card -->
     <div class="image-card">
       <a href="/post/{{$post->id}}">
-        <img src="/Assets/Images/{{$post->image}}" alt="" />
+      @if($post->image)
+           <img src="{{asset('storage/'.$post->image)}}" alt="">
+      @else
+            <img src="/Assets/Images/img-post1.png" alt="">
+      @endif
       </a>
     </div>
 

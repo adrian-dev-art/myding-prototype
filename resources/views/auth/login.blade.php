@@ -1,9 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+            <a href="/" class="">
                 Myding
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> -->
             </a>
         </x-slot>
 
@@ -47,6 +47,9 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
+                
+                    <a href="{{ route('register') }}" class="btn btn-outline-danger text-sm text-white-600 hover:text-gray-900 ml-3">{{ __('Register Now') }}</a>
+                
 
                 <x-button class="ml-3">
                     {{ __('Log in') }}

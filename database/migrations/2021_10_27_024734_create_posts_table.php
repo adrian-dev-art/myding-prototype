@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->foreignId('user_id');
             $table->foreignId('category_id');
             $table->string('place');
-            $table->string('image')->default('img-post.png');
+            $table->string('image')->nullable();;
             $table->text('title');
             $table->text('description');
             $table->foreignId('comment_id')->nullable();
