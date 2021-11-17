@@ -14,7 +14,11 @@
           <li>
             <div class="dropdown d-flex ">
               <a class="btn " href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="profile-pic" src="/Assets/Images/profile-pic-me.png" alt="" />
+                @if (auth()->user()->profile_picture)
+                <img src="/Assets/Images/{{ auth()->user()->profile_picture }}" alt="" height="40" width="40" class="rounded-circle">
+                @else
+                    <img src="/Assets/Images/avatar.png" alt="" height="40" width="40" class="rounded-circle">    
+                @endif
               </a>
             
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">

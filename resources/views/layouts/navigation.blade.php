@@ -90,3 +90,17 @@
         </div>
     </div>
 </nav>
+
+<script>
+      function showNavigation() {
+    var nav = document.getElementById("nav")
+    if (nav.style.display === "none") {
+      nav.style.bottom = "1vh"
+      nav.style.display = "block"
+    } else {
+      nav.style.display = "-5vh"
+      nav.style.display = "none"
+    }
+  }
+
+</script>

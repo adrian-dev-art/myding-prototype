@@ -292,6 +292,7 @@ body {
     padding: 0.5em;
     background-color: var(--white);
     border-radius: 1em;
+    margin-left: 15px;
 }
 
 .card-content-comment h5 {
@@ -590,4 +591,18 @@ body {
 
 .group-select {
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.create-post {
+    background-color: var(--secondary);
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    bottom: 3em;
+    right: 3em;
 }

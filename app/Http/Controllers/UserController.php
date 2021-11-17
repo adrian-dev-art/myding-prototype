@@ -60,6 +60,7 @@ class UserController extends Controller
     {
         return view('user.profile', [
             'user' => User::findorFail($id),
+            // 'post_count' => DB::table('users')->count(),
             'posts' => DB::table('posts')->where('user_id', $id)->get(),
         ]);
     }

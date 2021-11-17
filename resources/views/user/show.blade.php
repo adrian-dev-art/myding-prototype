@@ -17,7 +17,11 @@
           <ul class="top-card-left ">
             <li >
               <a href="/profile/{{$post->user->id}}" >
-                <img class="profile-pic" src="/Assets/Images/{{$post->user->profile_picture}}" alt="" />
+                @if ($post->user->profile_picture)
+                <img src="/Assets/Images/{{ $post->user->profile_picture }}" alt="" height="40" width="40" class="rounded-circle">
+                @else
+                    <img src="/Assets/Images/avatar.png" alt="" height="40" width="40" class="rounded-circle">    
+                @endif
               </a>
             </li>
             <li class="mx-2">

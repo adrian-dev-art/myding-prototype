@@ -2,18 +2,32 @@
 
 @section('content')
 
-    <div class="create-post">
-        
-    </div>
+@section('create-post-btn')
+    <section class="create-post">
+        <a href="/post/create">
+            <img src="/Assets/Icons/plus.png" alt="">
+        </a>
+    </section>
+@endsection
+
+@section('navigation')
+  <x-navigation/>
+@endsection
+<section class="d-flex">
+    
 
     <div class="wrapper-profile container">
         <div class="left-col profile-img">
-            <img src="/Assets/Images/adrian.png" alt="">
+            @if ($user->profile_picture)
+                <img src="/Assets/Images/{{ $user->profile_picture }}" alt="" height="150">
+            @else
+                <img src="/Assets/Images/avatar.png" alt="" height="150">    
+            @endif
         </div>
         <div class="right-col">
             <div class="name-username">
-                <h5>{{$user->name}}</h5>
-                <p>{{$user->username}}</p>
+                <h5>{{ $user->name }}</h5>
+                <p>{{ $user->username }}</p>
             </div>
             <div class="call-to-action">
                 <a class="dm-btn btn">
@@ -26,11 +40,11 @@
         </div>
     </div>
 
-        <div class="wrapper">
+    <div class="wrapper">
         <div class="status-count">
             <div class="followers">
                 <p class="count-followers">
-                    {{number_format($user->followers_count)}}
+                    {{ number_format($user->followers_count) }}
                 </p>
                 <p class="title">
                     Followers
@@ -38,7 +52,7 @@
             </div>
             <div class="following">
                 <p class="count-following">
-                {{number_format($user->following_count)}}
+                    {{ number_format($user->following_count) }}
                 </p>
                 <p class="title">
                     Following
@@ -46,7 +60,7 @@
             </div>
             <div class="posts">
                 <p class="count-posts">
-                {{number_format($user->post_count)}}
+                    {{ number_format($posts->count()) }}
                 </p>
                 <p class="title">
                     Post
@@ -57,29 +71,29 @@
         <div class="wrapper-post">
             @if (session()->has('succes'))
                 <div class="alert alert-succes" role="alert">
-                    {{ session('succes')}}
+                    {{ session('succes') }}
                 </div>
             @endif
             <div class="wrapper-card-post mx-5">
                 @foreach ($posts as $post)
-                <div class="card-post-me mx-2">
-                    <div class="front-card">
-                        <a href="/post/{{$post->id}}">
-                        <img src="/Assets/Images/img-post1.png" alt="" >
-                    </a>
+                    <div class="card-post-me mx-2">
+                        <div class="front-card">
+                            <a href="/post/{{ $post->id }}">
+                                <img src="/Assets/Images/img-post1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="back-card">
+                        </div>
                     </div>
-                    <div class="back-card">
-                    </div>
-                </div>
                 @endforeach
-               
+
             </div>
         </div>
     </div>
-</div>
+    </div>
 
 
     </div>
-</div>
-
+    </div>
+</section>
 @endsection()

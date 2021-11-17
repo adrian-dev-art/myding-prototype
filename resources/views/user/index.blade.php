@@ -4,6 +4,18 @@
 @endsection()
 @section('content')
 
+@section('navigation')
+  <x-navigation/>
+@endsection
+
+@section('share')
+          <x-share/>
+@endsection
+
+@section('comment')
+          <x-comment/>
+@endsection
+
 
 <section class="categories container">
   <a href="/" type="button" class=" btn-sm btn-categories ">All</a>
@@ -25,7 +37,11 @@
       <ul class="top-card-left ">
         <li>
           <a href="/profile/{{$post->user->id}}">
-            <img class="profile-pic" src="/Assets/Images/profile-pic-me.png" alt="" />
+            @if ($post->user->profile_picture)
+                <img src="/Assets/Images/{{ $post->user->profile_picture }}" alt="" height="40" width="40" class="rounded-circle">
+            @else
+                <img src="/Assets/Images/avatar.png" alt="" height="40" width="40" class="rounded-circle">    
+            @endif
           </a>
         </li>
         <li class="mx-2">
@@ -103,43 +119,20 @@
 
 
 <script>
-  // function myFunction() {
-  //   var desc = document.getElementById("desc-post");
-  //   var btnText = document.getElementById("myBtn");
-
-  //   if (desc.style.display === "none") {
-  //     desc.style.display = "inline";
-  //     btnText.innerHTML = "less";
-  //   } else {
-  //     btnText.innerHTML = "more";
-  //     desc.style.display = "none";
-  //   }
-  // }
-
-  function showNavigation() {
-    var nav = document.getElementById("nav")
-    if (nav.style.display === "none") {
-      nav.style.bottom = "1vh"
-      nav.style.display = "block"
-    } else {
-      nav.style.display = "-5vh"
-      nav.style.display = "none"
-    }
-  }
-
-
+ 
 
   function react() {
     var x = document.getElementById("emot")
     var smile = "/Assets/Icons/emoticon-white.png"
     var sad = "/Assets/Icons/emoticon-confused-white.png"
 
-    if (x.src = smile) {
+    if (x.src == smile) {
       x.src = sad
     } else {
       x.src = smile
     }
   }
 </script>
+
 
 @endsection()
