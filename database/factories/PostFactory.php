@@ -26,7 +26,7 @@ class PostFactory extends Factory
             'user_id' => $this->faker->randomDigitNotNull(),
             'category_id' => $this->faker->randomDigitNotNull(),
             'place' => $this->faker->city(5),
-            'image' => 'img-post.png',
+            // 'image' => 'img-post.png',
             'slug' =>  $this->faker->word(),
             'title' =>  $this->faker->sentence(),
             'description' => $this->faker->paragraphs(2, true),

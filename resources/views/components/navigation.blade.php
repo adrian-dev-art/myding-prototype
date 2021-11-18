@@ -17,7 +17,7 @@
       </a></li>
       <li><a href=" /profile/{{ auth()->user()->id}} ">
         @if (auth()->user()->profile_picture)
-          <img src="/Assets/Images/{{ $post->user->profile_picture }}" alt="" height="30" width="30" class="rounded-circle">
+          <img src="/Assets/Images/{{ auth()->user()->profile_picture }}" alt="" height="30" width="30" class="rounded-circle">
         @else
             <img src="/Assets/Icons/account-circle-outline.png" alt="" height="30" width="30" class="rounded-circle">    
         @endif

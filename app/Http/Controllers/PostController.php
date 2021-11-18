@@ -61,14 +61,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         
+        
+
         $validatedData = $request->validate([
             'title' => 'required|max:225',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
+            'image' => 'image|file',
             'description' => 'required',
             'place' => 'required',
         ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
 

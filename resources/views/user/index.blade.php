@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('topbar')
-@extends('components.top-bar-main')
+  <x-top-bar-main/>
 @endsection()
 @section('content')
 
@@ -28,6 +28,8 @@
 
 
 @foreach ($posts as $post)
+{{-- @dd($post->category->name) --}}
+
 <div id="card" class="container d-flex justify-content-center align-items-center">
 
   <!-- card-content -->
@@ -37,11 +39,10 @@
       <ul class="top-card-left ">
         <li>
           <a href="/profile/{{$post->user->id}}">
-            @if ($post->user->profile_picture)
-                <img src="/Assets/Images/{{ $post->user->profile_picture }}" alt="" height="40" width="40" class="rounded-circle">
-            @else
+          
                 <img src="/Assets/Images/avatar.png" alt="" height="40" width="40" class="rounded-circle">    
-            @endif
+            
+            
           </a>
         </li>
         <li class="mx-2">
@@ -66,10 +67,15 @@
     <!-- Bagian gambar di card -->
     <div class="image-card">
       <a href="/post/{{$post->id}}">
-        <img src="/Assets/Images/{{$post->image}}" alt="" />
+        @if($post->image)
+            <img src="{{ asset('storage/'.$post->image)}}" alt="" >
+        @else
+            <img src="/Assets/Images/img-post1.png" alt="">
+        @endif
       </a>
     </div>
 
+    
     <!-- Bagian Content kaya deskripsi -->
     <div class="description-card container">
       {{-- <a href="#profile">

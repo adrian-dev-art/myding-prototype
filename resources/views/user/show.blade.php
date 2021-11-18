@@ -1,12 +1,16 @@
 @extends('layouts.main')
+{{-- @dd(auth()->user()->id)
+@section('topbar')
+  <x-top-bar-main/>
+@endsection() --}}
+@section('navigation')
+<x-navigation/>
+@endsection
 
-@section('top-bar')
-  @extends('components.top-bar-main')
-@endsection()
+
 
 @section('content')
 
-{{-- @dd($post) --}}
 
     <div id="card" class="container d-flex justify-content-center align-items-center">
       
@@ -42,10 +46,14 @@
             </a>
           </div>
         </div>
-        
         <!-- Bagian gambar di card -->
         <div class="image-card">
-          <img src="/Assets/Images/{{$post->image}}" alt="" />
+          @if($post->image)
+          
+              <img src="{{ asset('storage/'.$post->image)}}" alt="" >
+          @else
+              <img src="/Assets/Images/img-post1.png" alt="">
+          @endif
         </div>
         
         <!-- Bagian Content kaya deskripsi -->

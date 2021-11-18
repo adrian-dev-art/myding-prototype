@@ -18,11 +18,11 @@
 
     <div class="wrapper-profile container">
         <div class="left-col profile-img">
-            @if ($user->profile_picture)
-                <img src="/Assets/Images/{{ $user->profile_picture }}" alt="" height="150">
-            @else
-                <img src="/Assets/Images/avatar.png" alt="" height="150">    
-            @endif
+            @if (auth()->user()->profile_picture)
+                  <img src="{{ asset('storage/'.auth()->user()->profile_picture)}}" alt="" height="150" width="150" class="rounded">
+                @else
+                    <img src="/Assets/Images/avatar.png" alt="" height="150" width="150" class="rounded">    
+                @endif
         </div>
         <div class="right-col">
             <div class="name-username">
