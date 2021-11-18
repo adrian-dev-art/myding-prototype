@@ -11,6 +11,13 @@ Document
 Use a better box model (opinionated).
 */
 
+:root {
+  --primary: #160151;
+  --secondary: #620194;
+  --white: #fff;
+  --black: #000;
+}
+
 *,
 ::before,
 ::after {
@@ -250,6 +257,9 @@ Add the correct vertical alignment in Chrome and Firefox.
 progress {
   vertical-align: baseline;
 }
+
+/* Customize background color */
+
 
 /**
 Correct the cursor style of increment and decrement buttons in Safari.
@@ -15777,6 +15787,16 @@ select {
 .bg-blue-400 {
   --tw-bg-opacity: 1;
   background-color: rgba(96, 165, 250, var(--tw-bg-opacity));
+}
+
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: var(--secondary);
 }
 
 .bg-blue-500 {

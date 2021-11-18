@@ -10,7 +10,7 @@
             @csrf
             <div class="mb-3 group-input">
               <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" autofocus value="{{old('title')}}">
+              <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" autofocus value="{{$post->title}}">
               @error('title')
                   <div class="invalid-feedback">
                     {{ $message}}
@@ -20,7 +20,7 @@
 
             <div class="mb-3 group-input">
               <label for="slug" class="form-label ">Slug</label>
-              <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" value="{{old('slug')}}">
+              <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" value="{{$post->slug}}"">
               @error('slug')
                   <div class="invalid-feedback">
                     {{ $message}}
@@ -30,7 +30,7 @@
 
             <div class="mb-3 group-input">
               <label for="place" class="form-label ">Place</label>
-              <input type="text" class="form-control @error('place') is-invalid @enderror" id="place" name="place" value="{{old('place')}}">
+              <input type="text" class="form-control @error('place') is-invalid @enderror" id="place" name="place" value="{{$post->place}}">
               @error('place')
                   <div class="invalid-feedback">
                     {{ $message}}
@@ -40,7 +40,7 @@
             
             <div class="mb-3 group-input">
               <label for="description" class="form-label">Description</label>
-              <input id="x" type="hidden" name="description" value="{{old('description')}}">
+              <input id="x" type="hidden" name="description" value="{{$post->description}}">
               <trix-editor input="x"></trix-editor>
               @error('description')
               <p class="text-danger">{{$message}}</p>
@@ -52,7 +52,7 @@
               <select class="form-select mb-3" name="category_id" id="category">
                 <option selected>Choose the category</option>
                 @foreach ($categories as $category)
-                  @if(old('category_id') == $category->id)
+                  @if($post->category->id == $category->id)
                     <option value="{{$category->id}}" selected>{{$category->name}}</option>
                     @else
                     <option value="{{$category->id}}">{{$category->name}}</option>
@@ -69,6 +69,7 @@
                     {{ $message}}
                   </div>
               @enderror
+              <img src="{{asset('storage/'.$post->image)}}" alt="" class="img-fluid rounded mt-3">
             </div>
 
             

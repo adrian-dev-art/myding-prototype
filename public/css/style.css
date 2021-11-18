@@ -403,12 +403,12 @@ body {
 }
 
 .call-to-action {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: flex-start
 }
 
 .wrapper {
-    margin-top: 20vh;
+    margin-top: 25vh;
     background-color: var(--secondary);
     height: 100%;
     border-radius: 20px;
@@ -421,6 +421,7 @@ body {
     justify-content: space-between;
     flex-wrap: nowrap;
     flex-direction: row;
+    
 }
 
 .profile-img {
@@ -433,13 +434,27 @@ body {
     border-radius: 20px;
 }
 
+.fit-img {
+    width: 100%;
+}
+
+.bg-second {
+    background-color: var(--secondary);
+}
+
+.input-img {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
 .dm-btn {
     width: max-content;
     height: max-content;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     border: 2px solid var(--white);
     border-radius: 5px;
     box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25); 
+    margin-right: 0.5rem;
 }
 
 .dm-btn:hover {
@@ -448,18 +463,20 @@ body {
 }
 
 .dm-btn img {
-    height: 2rem;
+    width: 1rem;
 }
 
 .follow-btn {
     width: max-content;
-    height: max-content;
+    /* height: max-content; */
     padding: 0.1rem 7vw;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     /* background-color: var(--white); */
     border: 2px solid var(--white);
     border-radius: 5px;
     box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
 }
 
 .follow-btn:hover {
@@ -472,7 +489,7 @@ body {
 
 .follow-btn p{
     color: var(--white);
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 

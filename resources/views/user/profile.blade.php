@@ -2,17 +2,11 @@
 
 @section('content')
 
-@section('create-post-btn')
-    <section class="create-post">
-        <a href="/post/create">
-            <img src="/Assets/Icons/plus.png" alt="">
-        </a>
-    </section>
-@endsection
-
-@section('navigation')
+  <x-create-post-button/>
   <x-navigation/>
-@endsection
+  <x-top-bar-main/>
+
+
 <section class="d-flex">
     
 
@@ -68,18 +62,24 @@
             </div>
         </div>
         <h2 class="title-wrapper-post">POST</h2>
+        @if (session()->has('succes'))
+            <div class="alert alert-succes mx-auto" role="alert">
+                {{ session('succes') }}
+            </div>
+        @endif
         <div class="wrapper-post">
-            @if (session()->has('succes'))
-                <div class="alert alert-succes" role="alert">
-                    {{ session('succes') }}
-                </div>
-            @endif
-            <div class="wrapper-card-post mx-5">
+            <div class="wrapper-card-post ">
                 @foreach ($posts as $post)
                     <div class="card-post-me mx-2">
                         <div class="front-card">
                             <a href="/post/{{ $post->id }}">
+                             
+                                @if ($post->image)
+                                    <img src="{{asset('storage/'.$post->image)}}" alt="">
+                                @else
                                 <img src="/Assets/Images/img-post1.png" alt="">
+                                    
+                                @endif
                             </a>
                         </div>
                         <div class="back-card">

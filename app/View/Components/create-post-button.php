@@ -1,10 +1,10 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class {{ class }} extends Component
+class create-post-button extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class {{ class }} extends Component
      */
     public function render()
     {
-        return {{ view }};
+        return view('components.create-post-button');
     }
 }

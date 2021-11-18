@@ -21,8 +21,9 @@
           <ul class="top-card-left ">
             <li >
               <a href="/profile/{{$post->user->id}}" >
+                {{-- @dd($post->user->profile_picture) --}}
                 @if ($post->user->profile_picture)
-                <img src="/Assets/Images/{{ $post->user->profile_picture }}" alt="" height="40" width="40" class="rounded-circle">
+                    <img src="{{asset('storage/'.$post->user->profile_picture)}}" alt="" height="40" width="40" class="rounded-circle">
                 @else
                     <img src="/Assets/Images/avatar.png" alt="" height="40" width="40" class="rounded-circle">    
                 @endif
@@ -90,6 +91,12 @@
               aria-controls="share">
               <img src="/Assets/Icons/share-all-outline.png" alt="" />
             </button>
+          </li>
+          <li>
+            
+            <a href="/post/{{$post->id}}/edit/">
+              <img src="/Assets/Icons/more-btn.png" alt="">
+            </a>
           </li>
         </ul>
       </div>

@@ -62,9 +62,6 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        
-        
-
         $validatedData = $request->validate([
             'title' => 'required|max:225',
             'slug' => 'required|unique:posts',
@@ -109,7 +106,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('user.edit-post-form',[
+            'categories' => Category::get(),
+            'post' => Post::findorFail($id),
+        ]);
     }
 
     /**
@@ -121,7 +121,35 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $rules = [
+            
+            'title' => 'required|max:225',
+            'category_id' => 'required',
+            'image' => 'image|file',
+            'description' => 'required',
+            'place' => 'required',
+        ];
+
+        if ($request->slug != $post->slug) {
+            $rules['slug'] = 'required|unique:posts';
+        }
+
+        
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+        
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData = $request->validate($rules);
+        
+        Post::where('id', $post->id)
+            ->update($validatedData);
+
+        
+        return redirect()->route('profile', [Auth::id()])
+        ->with('succes', 'Your post has been Updated');
+
     }
 
     /**
